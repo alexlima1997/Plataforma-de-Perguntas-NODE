@@ -4,8 +4,10 @@ const app = express();
 
 const port = 4001;
 
+app.set('view engine', 'ejs');
+
 app.get('/', (req, res) => {
-    res.send('Bem vindo ao guia de Node!');
+    res.render('index');
 });
 
 app.listen(port, (err) => {
