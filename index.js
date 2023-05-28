@@ -48,6 +48,21 @@ app.post('/salvarpergunta', (req, res) => {
   }); 
 });
 
+app.get('/pergunta/:id', (req, res) => {
+  let id = req.params.id;
+  Pergunta.findOne({
+    where: {id: id}
+  }).then(pergunta => {
+    if (pergunta) {
+      res.render('pergunta', {
+        pergunta: pergunta
+      });
+    }else {
+      res.redirect('/');
+    }
+  })
+});
+
 app.listen(port, (err) => {
   if (err) {
     console.log('Ocorreu um erro!');
