@@ -11,6 +11,10 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/perguntar', (req, res) => {
+  res.render('perguntar');
+});
+
 app.listen(port, (err) => {
   if (err) {
     console.log('Ocorreu um erro!');

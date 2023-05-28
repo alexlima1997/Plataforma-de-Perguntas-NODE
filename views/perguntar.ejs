@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include("partials/header.ejs") %>
+  <body>
+    <%- include("partials/navbar.ejs") %>
+    <div class="container">
+      <div class="card" id="formulario-pergunta">
+        <div class="card-header">
+          <h3>Realizar pergunta</h3>
+        </div>
+        <div class="card-body">
+          <form action="">
+            <label for="">Título</label>
+            <input type="text" placeholder="Título" class="form-control" />
+            <br />
+            <label for="">Descrição</label>
+            <textarea
+              name=""
+              placeholder="Descreva sua pergunta"
+              id=""
+              cols="30"
+              rows="10"
+              class="form-control"
+            ></textarea>
+            <br />
+            <button class="btn btn-primary">Perguntar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+  <%- include("partials/footer.ejs") %>
+</html>
