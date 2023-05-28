@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 import { connection } from "./database.js";
 
-const Pergunta = connection.define('pergunta', {
+const Pergunta = connection.define('perguntas', {
     titulo: {
         type: Sequelize.STRING,
         allowNull: false

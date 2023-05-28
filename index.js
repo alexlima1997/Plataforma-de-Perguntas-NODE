@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import { connection } from './database/database.js'
-import perguntaModel from './database/Pergunta.js'
+import Pergunta from './database/Pergunta.js'
 
 connection
   .authenticate()
@@ -32,7 +32,13 @@ app.get('/perguntar', (req, res) => {
 app.post('/salvarpergunta', (req, res) => {
   let titulo = req.body.titulo;
   let descricao = req.body.descricao;
-  res.send(`Formulário recebido: ${titulo}, ${descricao}`);
+  
+  Pergunta.create({
+    titulo: titulo,
+    descricao: descricao
+  }).then(() => {
+    res.redirect('/');
+  }); 
 });
 
 app.listen(port, (err) => {
