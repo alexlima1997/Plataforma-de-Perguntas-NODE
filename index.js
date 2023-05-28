@@ -64,6 +64,17 @@ app.get('/pergunta/:id', (req, res) => {
   })
 });
 
+app.post('/responder', (req, res) => {
+  let corpo = req.body.corpo;
+  let perguntaId = req.body.pergunta;
+  Resposta.create({
+    corpo: corpo,
+    perguntaId: perguntaId
+  }).then(() => {
+    res.redirect('/pergunta/' + perguntaId)
+  });
+});
+
 app.listen(port, (err) => {
   if (err) {
     console.log('Ocorreu um erro!');
